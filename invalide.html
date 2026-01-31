@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Vérification du coupon...</title>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;font-family: Arial, sans-serif;background:#111;color:white;flex-direction:column;text-align:center;}
+.loader{border:6px solid #333;border-top:6px solid #fff;border-radius:50%;width:60px;height:60px;animation:spin 1s linear infinite;margin-bottom:20px;}
+@keyframes spin{0%{transform:rotate(0deg);}100%{transform:rotate(360deg);}}
+.invalid{display:none;color:#ff3b3b;}
+.cross{font-size:80px;}
+</style>
+</head>
+<body>
+
+<div class="loading">
+    <div class="loader"></div>
+    <h2>Vérification du coupon en cours...</h2>
+</div>
+
+<div class="invalid">
+    <div class="cross">❌</div>
+    <h1>COUPON INVALIDE</h1>
+    <p>Ce coupon a déjà été utilisé ou n'est pas reconnu.</p>
+</div>
+
+<script>
+setTimeout(()=>{
+    document.querySelector(".loading").style.display="none";
+    document.querySelector(".invalid").style.display="block";
+    document.body.style.background="#3d0b0b";
+},3000);
+</script>
+
+</body>
+</html>
